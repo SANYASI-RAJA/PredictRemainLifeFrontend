@@ -24,7 +24,7 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post("https://rul-backend.onrender.com//api/auth/login", formData);
+      const res = await axios.post("https://rul-backend.onrender.com/api/auth/login", formData);
       const { token } = res.data;
       if (token) {
         localStorage.setItem("token", token);
