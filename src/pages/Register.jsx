@@ -29,7 +29,7 @@ const Register = () => {
     try {
       
       setLoading(true);
-      const response = await axios.post("http://localhost:5000/api/auth/register", {
+      const response = await axios.post("https://rul-backend.onrender.com//api/auth/register", {
         email: formData.email,
         password: formData.password,
       });
