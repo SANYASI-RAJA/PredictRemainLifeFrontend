@@ -10,7 +10,7 @@ const Dashboard = () => {
       console.log(token);
       console.log('x');
       try {
-        const res = await axios.get('https://rul-backend.onrender.com//api/predictions/history', {
+        const res = await axios.get('https://rul-backend.onrender.com/api/predictions/history', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setHistory(res.data.history);

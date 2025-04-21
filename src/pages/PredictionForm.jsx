@@ -56,7 +56,7 @@ const PredictionForm = () => {
     console.log(token);
     try {
       
-      const res = await axios.post('https://rul-backend.onrender.com//api/predictions', 
+      const res = await axios.post('https://rul-backend.onrender.com/api/predictions', 
         { data: sensorDataArray} ,
         {headers: {Authorization: `Bearer ${token}`}}
       );
