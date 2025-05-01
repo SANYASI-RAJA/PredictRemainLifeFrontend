@@ -2,31 +2,33 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const inputFields = [
-  { name: 'op_setting_1', label: 'Ambient Temperature' },
-  { name: 'op_setting_2', label: 'Pressure Level' },
-  { name: 'op_setting_3', label: 'Flow Rate' },
-  { name: 'sensor_1', label: 'Vibration Sensor' },
-  { name: 'sensor_2', label: 'Temperature Sensor' },
-  { name: 'sensor_3', label: 'Oil Quality Index' },
-  { name: 'sensor_4', label: 'Coolant Temperature' },
-  { name: 'sensor_5', label: 'Exhaust Gas Temperature' },
-  { name: 'sensor_6', label: 'Rotational Speed (RPM)' },
-  { name: 'sensor_7', label: 'Fuel Consumption Rate' },
-  { name: 'sensor_8', label: 'Compressor Efficiency' },
-  { name: 'sensor_9', label: 'Torque Output' },
-  { name: 'sensor_10', label: 'Power Output' },
-  { name: 'sensor_11', label: 'Internal Pressure' },
-  { name: 'sensor_12', label: 'Airflow Rate' },
-  { name: 'sensor_13', label: 'Battery Voltage' },
-  { name: 'sensor_14', label: 'Hydraulic Pressure' },
-  { name: 'sensor_15', label: 'Bearing Temperature' },
-  { name: 'sensor_16', label: 'Gearbox Vibration' },
-  { name: 'sensor_17', label: 'Lubricant Viscosity' },
-  { name: 'sensor_18', label: 'Heat Exchange Rate' },
-  { name: 'sensor_19', label: 'Chamber Humidity' },
-  { name: 'sensor_20', label: 'Valve Position' },
-  { name: 'sensor_21', label: 'Load Stress Factor' }
+  { name: 'op_setting_1', label: 'Operational Setting 1' },
+  { name: 'op_setting_2', label: 'Operational Setting 2' },
+  { name: 'op_setting_3', label: 'Operational Setting 3' },
+  { name: 'sensor_1', label: 'Fan Inlet (°R)' },
+  { name: 'sensor_2', label: 'LPC Outlet (°R)' },
+  { name: 'sensor_3', label: 'HPC Outlet (°R)' },
+  { name: 'sensor_4', label: 'LPT Outlet (°R)' },
+  { name: 'sensor_5', label: 'Fan Inlet Pressure (psia)' },
+  { name: 'sensor_6', label: 'Bypass Duct Pressure (psia)' },
+  { name: 'sensor_7', label: 'HPC Outlet Pressure (psia)' },
+  { name: 'sensor_8', label: 'Fan Speed (rpm)' },
+  { name: 'sensor_9', label: 'Core Speed (rpm)' },
+  { name: 'sensor_10', label: 'Engine Pressure Ratio' },
+  { name: 'sensor_11', label: 'HPC Static Pressure (psia)' },
+  { name: 'sensor_12', label: 'Fuel/Ps30 Ratio (pps/psi)' },
+  { name: 'sensor_13', label: 'Corrected Fan Speed (rpm)' },
+  { name: 'sensor_14', label: 'Corrected Core Speed (rpm)' },
+  { name: 'sensor_15', label: 'Bypass Ratio' },
+  { name: 'sensor_16', label: 'Fuel-Air Ratio' },
+  { name: 'sensor_17', label: 'Bleed Enthalpy' },
+  { name: 'sensor_18', label: 'Demanded Fan Speed (rpm)' },
+  { name: 'sensor_19', label: 'Demanded Corrected Fan Speed (rpm)' },
+  { name: 'sensor_20', label: 'HPT Coolant Bleed (lbm/s)' },
+  { name: 'sensor_21', label: 'LPT Coolant Bleed (lbm/s)' }
 ];
+
+
 
 const PredictionForm = () => {
   const initialForm = inputFields.reduce((acc, field) => {
